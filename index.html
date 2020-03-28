@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css" />
+		<title>扩展收缩卡片页面</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel active" style="background-image: url(img/a01.jpg);">
+				<h3>万里无云</h3>
+			</div>
+			<div class="panel" style="background-image: url(img/a02.jpg);">
+				<h3>蓝天白云</h3>
+			</div>
+			<div class="panel" style="background-image: url(img/a03.jpg);">
+				<h3>晴空万里</h3>
+			</div>
+			<div class="panel" style="background-image: url(img/a04.jpg);">
+				<h3>蓝色妖姬</h3>
+			</div>
+			<div class="panel" style="background-image: url(img/a05.jpg);">
+				<h3>蓝色水晶</h3>
+			</div>
+			<div class="panel" style="background-image: url(img/a06.jpg);">
+				<h3>万里无云</h3>
+			</div>
+		</div>
+			
+		<script type="text/javascript">
+			//查出所有class是panel的div
+			const panels =document.querySelectorAll(".panel");
+			//遍历给绑定点击事件。class添加active	
+			panels.forEach(panel =>{
+				panel.addEventListener("click",() =>{
+					removeActive();
+					panel.classList.add("active");
+				});
+			});
+			
+			//取消class添加的active
+			function removeActive(){
+				panels.forEach(panel =>{
+					panel.classList.remove("active");
+				});
+			}
+		</script>
+	</body>
+</html>
